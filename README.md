@@ -123,6 +123,53 @@ The UMAP plot of the validation set shows the learned representations of the deb
 
 ---
 
+## Project Structure
+
+The project is organized as follows:
+
+```plaintext
+ConBias/
+│
+├── .gitignore                      # Excludes unnecessary files from the repository
+├── bias_score_histogram.png        # Visualization showing the distribution of bias scores
+├── per_concept_bias_barplot.png    # Barplot illustrating bias scores for individual concepts
+├── README.md                       # Project documentation and description
+├── requirements.txt                # List of required dependencies to run the project
+├── Umap - train.png                # UMAP visualization for the training set
+├── Umap - val.png                  # UMAP visualization for the validation set
+│
+├── bias_results/                   # Folder for storing bias analysis results
+│   └── bias_score_distribution.png # Visual representation of bias score distribution
+│
+└── src/                            # Source code directory containing all the scripts
+    │
+    ├── model.py                    # Defines model architecture and configuration
+    ├── train.py                    # Script for training the model
+    ├── train1.py                   # Alternative training script (for CPU only)
+    ├── utils.py                    # Utility functions used across the project
+    ├── __init__.py                 # Initializes the source code package
+    │
+    ├── bias/                       # Folder for bias computation-related scripts
+    │   └── compute_bias.py         # Script to compute bias across the dataset
+    │
+    ├── debias/                     # Folder for debiasing scripts
+    │   ├── debias_data.py          # Data preprocessing and transformation for debiasing
+    │   ├── debias_eval.py          # Evaluates model performance post-debiasing
+    │   ├── debias_train.py         # Fine-tunes model on debiased dataset
+    │   └── debias_visualize.py     # Visualizations of debiasing results
+    │
+    ├── embedding/                         # Folder for embedding extraction scripts
+    │   ├── extract_clip_features.py       # Extracts features from the CLIP model
+    │   └── extract_concept_embeddings.py  # Extracts concept embeddings for analysis
+    │
+    └── visualization/              # Scripts for generating visualizations
+        ├── bias_visualize.py       # Visualizes bias-related metrics
+        ├── plot_umap.py            # Generates UMAP plots for the dataset
+        ├── run_umap_train.py       # Runs UMAP visualization on the training set
+        └── run_umap_val.py         # Runs UMAP visualization on the validation set
+```
+---
+
 ### **Umap - Train Visualization**
 This image represents the UMAP visualization of the training data distribution.
 
