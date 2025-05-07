@@ -1,0 +1,29 @@
+# Ignore Python bytecode
+*.pyc
+__pycache__/
+
+# Ignore virtual environment folders
+venv/
+env/
+conda_env/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore log files
+*.log
+
+# Ignore data files (if any)
+data/
+*.h5
+
+# Ignore model weights (if any)
+*.pth
+*.h5
+
+# Ignore system files (e.g., macOS)
+.DS_Store
+
+# Ignore IDE settings (e.g., VSCode, PyCharm)
+.vscode/
+.idea/
